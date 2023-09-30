@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document43342t289[-9</title>
+    <title>Document43342t289[-9</title>
+    <title>Calculator by Prabhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #18171726;
+            background-color: #1ed05730;
+            align-content: stretch;
+            flex-wrap: nowrap;
+        }
+
+        .calculator {
+            border: 4px solid #717377;
+            height: auto;
+            margin: auto;
+            padding: 0px;
+            border-radius: 20px;
+            background: transparent;
+            box-shadow: 8px 12px 36px 4px rgb(0 0 0);
+            background-color: #7df79a82;
+            border-color: lab(0 0 0);
+
+        }
+
+        input {
+            width: 320px;
+            border: none;
+            padding: 24px;
+            margin: 10px;
+            background: transparent;
+            box-shadow: 0px 3 px 15px 15px rgba(67, 67, 68, 0.5);
+            font-size: 40px;
+            text-align: right;
+            /* color: #fff; */
+        }
+
+        input::placeholder {
+            color: #160f0f;
+            /* opacity: 45%; */
+        }
+
+        button {
+            border: none;
+            width: 62px;
+            height: 54px;
+            margin: 10px;
+            border-radius: 30%;
+            border: double;
+            border-color: goldenrod;
+            background-color: black;
+            color: #ffffff;
+            font-size: 20px;
+            box-shadow: 5px 8px 5px #181717;
+            cursor: pointer;
+        }
+
+        .equal-btn {
+            background-color: rgba(231, 108, 0, 0.779);
+        }
+
+        .operator-btn {
+            color: greenyellow;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" placeholder="Enter Your No" id="inputBox">
+
+
+        <div>
+            <button class="operator-btn">AC</button>
+            <button class="operator-btn">DEL</button>
+            <button class="operator-btn">%</button>
+            <button class="operator-btn">*</button>
+
+
+        </div>
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator-btn">+</button>
+
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator-btn">/</button>
+
+
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator-btn">-</button>
+
+
+        </div>
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equal-btn">=</button>
+
+        </div>
+    </div>
+    <script>
+        let input = document.getElementById("inputBox");
+        let buttons = document.querySelectorAll("button");
+
+        let string = "";
+        let arr = Array.from(buttons);
+        arr.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                if (e.target.innerHTML == "=") {
+                    string = eval(string);
+                    input.value = string;
+                } else if (e.target.innerHTML == "AC") {
+                    string = "";
+                    input.value = string;
+                } else if (e.target.innerHTML == "DEL") {
+                    string = string.substring(0, string.length - 1);
+                    input.value = string;
+                }
+
+
+                else {
+                    string += e.target.innerHTML;
+                    input.value = string;
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
